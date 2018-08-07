@@ -1,0 +1,24 @@
+/* ====================== styling for screens above 600px width ====================== */
+/* ====================== styling for main view (no restaurant selected) ====================== */
+@media screen and (min-width:600px){
+  .filter-options {
+    grid-template-columns: 100%;
+  }
+  #restaurants-list {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    flex-wrap: wrap;
+  }
+  #restaurants-list li {
+    width: 80%;
+  }
+  #restaurant-list li:nth-child(even) {
+    grid-column-start: 2;
+  }
+}
+/* ====================== styling for screens above 900px width ====================== */
+@media screen and (min-width: 900px){
+  #restaurants-list {
+    grid-template-columns: 33% 33% 33%;
+  }
+}
