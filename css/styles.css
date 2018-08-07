@@ -80,7 +80,7 @@ nav h1 a {
     background-color: #eee;
     font-size: 17px;
     margin: 0;
-    width: calc(50% - 80px);
+    width: 100%;
 }
 
 /* Display list items side by side */
@@ -148,7 +148,7 @@ nav h1 a {
 }
 /* ====================== Tablets and above  ====================== */
 #filterArea {
-	display: block;
+	display: none;
 	grid-row-start: 1;
 	grid-column-start: 1;
 	grid-column-end: 1;
@@ -237,21 +237,21 @@ nav h1 a {
 }
 .inside #map-container {
   background: blue none repeat scroll 0 0;
-  height: 87%;
+  height: 600px;
   position: fixed;
   right: 0;
-  top: 80px;
-  width: 50%;
+  top: 130px;
+  width: 100%;
 }
 .inside #map {
   background-color: #ccc;
-  height: 100%;
+  height: 600px;
   width: 100%;
 }
 .inside #footer {
   bottom: 0;
-  position: absolute;
-  width: 50%;
+  position: fixed;
+  width: 100%;
 }
 #restaurant-name {
   color: #f18200;
@@ -285,11 +285,15 @@ nav h1 a {
 #restaurant-container, #reviews-container {
   border-bottom: 1px solid #d9d9d9;
   border-top: 1px solid #fff;
-  padding: 140px 40px 30px;
-  width: 50%;
+  padding: 35px 20px 35px;
+  width: 100%;
+	position: relative;
+	top: 725px;
+	background-color: #fff;
+
 }
 #reviews-container {
-  padding: 30px 40px 80px;
+  /* padding: 30px 40px 80px; */
 }
 #reviews-container h2 {
   color: #f58500;
@@ -311,7 +315,7 @@ nav h1 a {
   overflow: hidden;
   padding: 0 20px 20px;
   position: relative;
-  width: 85%;
+  width: 90%;
 }
 #reviews-list li p {
   margin: 0 0 10px;
