@@ -14,7 +14,6 @@ filterOptions();
 function filterOptions(){
   // screens below 600px wide
   if(screen.width <= '599'){
-    console.log("less than 600px")
   filterArea.style.display = "none";
   burgerMenu.style.display = "block";
   burgerTitle.style.display = "block";
@@ -22,10 +21,8 @@ function filterOptions(){
   burgerMenu.addEventListener("click", toggleFilters);
   // function that toggles display of filter
     function toggleFilters(){
-    console.log("toggle filters called")
     // if filterArea display currently none
     if(filterArea.style.display === "none"){
-      console.log("if display none")
       // show filter area, increase bar height, change image and hide title
       burgerTitle.style.display = "block";
       filterArea.style.display = "block";
@@ -41,10 +38,8 @@ function filterOptions(){
     }
     // function to hide filters and display burger menu again
       function hide(){
-        console.log("hide called")
         // if filterArea display currentl set to block
         if(filterArea.style.display === "block"){
-          console.log("if display block")
           // hide filter area, decrease bar height, change image and show title
           filterArea.style.display = "none";
           burgerMenu.src = "img/menu.png";

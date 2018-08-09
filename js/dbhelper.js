@@ -166,6 +166,7 @@ class DBHelper {
       })
       marker.addTo(newMap);
     return marker;
+    // accessibility for map
     map.on('load', () => {
       map.addControl(new MapboxAccessibility({
 
