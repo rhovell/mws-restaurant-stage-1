@@ -6,17 +6,14 @@ let burgerTitle = document.getElementById('burgerHeader');
 
 // add eventListener to window to detect for resizing
 window.addEventListener("resize", filterOptions);
-window.addEventListener("resize", largeScreenFilters);
+// window.addEventListener("resize", largeScreenFilters);
 // call the filterOptions function to ensure correct correct display on load
 filterOptions();
 // filter options function
 // @description manages filter area display, hidden behind burger menu for mobiles
 function filterOptions(){
-  console.log("screen change")
-  console.log(screen.width)
   // screens below 600px wide
-  let screenWidth = screen.width;
-  if(screenWidth <= '599'){
+  if(screen.width <= '599'){
     console.log("less than 600px")
   filterArea.style.display = "none";
   burgerMenu.style.display = "block";
@@ -30,12 +27,14 @@ function filterOptions(){
     if(filterArea.style.display === "none"){
       console.log("if display none")
       // show filter area, increase bar height, change image and hide title
-      burgerTitle.style.display = "none";
+      burgerTitle.style.display = "block";
       filterArea.style.display = "block";
-      filterBar.style.height = '170px';
+      // filterBar.style.height = '170px';
+      filterBar.classList.toggle('open');
+      // filterBar.classList.add('open');
       // changes burger menu to close image
       burgerMenu.src = "img/close-button.svg";
-      // burgerMenu.title = "Hide Filters";
+      burgerMenu.alt = "Hide Filters";
       // add new eventListener to close filter options, remove toggleFilters
       burgerMenu.removeEventListener("click", toggleFilters);
       burgerMenu.addEventListener("click", hide);
@@ -49,8 +48,10 @@ function filterOptions(){
           // hide filter area, decrease bar height, change image and show title
           filterArea.style.display = "none";
           burgerMenu.src = "img/menu.png";
-          filterBar.style.height = '50px';
+          // filterBar.style.height = '50px';
           burgerTitle.style.display = "block";
+          filterBar.classList.toggle('open');
+          // filterBar.classList.add('closed');
           // removeEventListener for hide function
           burgerMenu.removeEventListener("click", hide);
           // re-add the eventListener to show filters
@@ -59,8 +60,6 @@ function filterOptions(){
       }
     }
   }
-}
-function largeScreenFilters(){
   // screens above 600px wide
   if(screen.width > '600'){
     // removes burger menu display and shows filter area alone
@@ -68,6 +67,15 @@ function largeScreenFilters(){
     filterArea.style.display = "flex";
     filterBar.height = '50px';
     // remove title for burger menu
-    burgerTitle.style.display = "none";
+    burgerTitle.style.display = "block";
   }
+}
+
+var body = document.body;
+var scrollUp = document.getElementById("scrollUp");
+scrollUp.addEventListener("click", topFunction);
+
+function topFunction() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }

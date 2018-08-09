@@ -85,9 +85,11 @@ initMap = () => {
       'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
     id: 'mapbox.streets'
   }).addTo(newMap);
-
   updateRestaurants();
 }
+
+
+
 /**
  * Update page and map for current restaurants.
  */
@@ -137,6 +139,8 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
     ul.append(createRestaurantHTML(restaurant));
   });
   addMarkersToMap();
+  const restCount =  document.getElementById('restaurant-count');
+  restCount.innerHTML = restaurants.length;
 }
 
 /**
@@ -147,10 +151,11 @@ createRestaurantHTML = (restaurant) => {
 
   const image = document.createElement('img');
   image.className = 'restaurant-img';
+  image.alt = restaurant.name + " Restaurant Image";
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
   li.append(image);
 
-  const name = document.createElement('h1');
+  const name = document.createElement('h2');
   name.innerHTML = restaurant.name;
   li.append(name);
 
@@ -162,10 +167,14 @@ createRestaurantHTML = (restaurant) => {
   address.innerHTML = restaurant.address;
   li.append(address);
 
+  const moreHolder = document.createElement('div');
+  moreHolder.role = 'button';
   const more = document.createElement('a');
+  moreHolder.append(more);
+  more.alt = 'View Restaurant Details';
   more.innerHTML = 'View Details';
   more.href = DBHelper.urlForRestaurant(restaurant);
-  li.append(more)
+  li.append(moreHolder)
 
   return li
 }

@@ -49,7 +49,7 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 }
 #footer {
   background-color: #444;
-  color: #aaa;
+  color: #ffffff;
   font-size: 8pt;
   letter-spacing: 1px;
   padding: 25px;
@@ -78,7 +78,7 @@ nav h1 a {
     padding: 10px 40px 16px;
     list-style: none;
     background-color: #eee;
-    font-size: 17px;
+    font-size: 1em;
     margin: 0;
     width: 100%;
 }
@@ -114,17 +114,34 @@ nav h1 a {
 }
 /* ====================== Restaurant Filtering ====================== */
 /* ====================== All screens ====================== */
+.filterForm {
+	display: inline;
+	width: 100%;
+	margin-left: 10px;
+}
+.filterForm label {
+	color: #000000;
+	font-weight: 400;
+	text-align: right;
+	margin: auto;
+}
 .filter-options {
 	width: 100%;
-	height: 50px;
 	background-color: #3397DB;
 	align-items: center;
 	display: grid;
-	grid-template-columns: 80% 20%;
 	flex-wrap: nowrap;
+	grid-template-columns: 80% 20%;
 	grid-row-start: 1;
 	grid-column-start: 1;
 	grid-column-end: 2;
+	height: 50px;
+}
+.filter-options.open {
+	grid-template-columns: 80% 20%;
+	grid-row-start: 1;
+	grid-row-end: 2;
+	height: 200px;
 }
 /* ====================== Mobile Phones  ====================== */
 #burgerHeader {
@@ -149,15 +166,14 @@ nav h1 a {
 /* ====================== Tablets and above  ====================== */
 #filterArea {
 	display: none;
-	grid-row-start: 1;
+	grid-row-start: 2;
 	grid-column-start: 1;
-	grid-column-end: 1;
 	text-align: left;
+	margin-left: 20px;
 }
 .filter-options h2 {
-  color: white;
+  color: black;
   font-size: 1rem;
-  font-weight: normal;
   line-height: 1;
   margin: auto 5px auto 5px;
 	padding: 10px;
@@ -176,11 +192,23 @@ nav h1 a {
 }
 
 /* ====================== Restaurant Listing ====================== */
+.results-data {
+	display: inline-flex;
+}
+.results-data h1 {
+	margin: 10px 10px 0;
+}
+#restaurant-count {
+	float: right;
+	margin: 13px 0 10px;
+	font-weight: bolder;
+	font-size: medium;
+}
 #restaurants-list {
   background-color: #f3f3f3;
   list-style: none;
   margin: 0;
-  padding: 10px 15px 60px;
+  padding: 10px 15px 30px;
   text-align: center;
 }
 #restaurants-list li {
@@ -201,8 +229,8 @@ nav h1 a {
   min-height: 248px;
   min-width: 100%;
 }
-#restaurants-list li h1 {
-  color: #f18200;
+#restaurants-list li h2 {
+  color: #001658;
   font-family: Arial,sans-serif;
   font-size: 14pt;
   font-weight: 200;
@@ -216,9 +244,9 @@ nav h1 a {
   font-size: 11pt;
 }
 #restaurants-list li a {
-  background-color: orange;
+  background-color: #3397DB;
   border-bottom: 3px solid #eee;
-  color: #fff;
+  color: #000000;
   display: inline-block;
   font-size: 10pt;
   margin: 15px 0 0;
@@ -227,7 +255,10 @@ nav h1 a {
   text-decoration: none;
   text-transform: uppercase;
 }
-
+#restaurants-list li a:hover {
+	transform: translateY(4px);
+	border-bottom: 3px solid #ffffff;
+}
 /* ====================== Restaurant Details ====================== */
 .inside header {
   position: fixed;
@@ -254,7 +285,7 @@ nav h1 a {
   width: 100%;
 }
 #restaurant-name {
-  color: #f18200;
+  color: #001658;
   font-family: Arial,sans-serif;
   font-size: 20pt;
   font-weight: 200;
@@ -296,7 +327,7 @@ nav h1 a {
   /* padding: 30px 40px 80px; */
 }
 #reviews-container h2 {
-  color: #f58500;
+  color: #001658;
   font-size: 24pt;
   font-weight: 300;
   letter-spacing: -1px;
@@ -322,4 +353,22 @@ nav h1 a {
 }
 #restaurant-hours td {
   color: #666;
+}
+.scroll-top {
+	width: 80%;
+	background-color: #3397DB;
+	color: black;
+	text-align: center;
+	padding: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 1em;
+	cursor: pointer;
+	border-bottom: 3px solid #eee;
+}
+.scroll-top:hover {
+	transform: translateY(4px);
+	font-weight: bold;
+	border-bottom: 3px solid #ffffff;
+
 }
