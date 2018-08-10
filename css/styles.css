@@ -280,7 +280,7 @@ nav h1 a {
   width: 100%;
 }
 .inside #footer {
-  bottom: 0;
+  top: 725px;
   position: relative;
   width: 100%;
 }
