@@ -34,6 +34,19 @@
   #restaurant-list li:nth-child(even) {
     grid-column-start: 2;
   }
+  .inside #map-container {
+    height: 400px;
+  }
+  .inside #map {
+    height: 400px;
+  }
+
+  .inside #footer {
+    top: 525px;
+  }
+  #restaurant-container, #reviews-container {
+  	top: 525px;
+  }
 }
 /* ====================== styling for screens above 900px width ====================== */
 @media screen and (min-width: 900px){
