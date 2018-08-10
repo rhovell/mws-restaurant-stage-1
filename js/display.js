@@ -12,19 +12,14 @@ filterOptions();
 // filter options function
 // @description manages filter area display, hidden behind burger menu for mobiles
 function filterOptions(){
-  // screens below 600px wide
-  if(screen.width <= '599'){
-  filterArea.style.display = "none";
-  burgerMenu.style.display = "block";
-  burgerTitle.style.display = "block";
   // add event listener to burger menu
   burgerMenu.addEventListener("click", toggleFilters);
   // function that toggles display of filter
     function toggleFilters(){
     // if filterArea display currently none
-    if(filterArea.style.display === "none"){
+    // if(filterArea.style.display === "none"){
       // show filter area, increase bar height, change image and hide title
-      burgerTitle.style.display = "block";
+      // burgerTitle.style.display = "block";
       filterArea.style.display = "block";
       // filterBar.style.height = '170px';
       filterBar.classList.toggle('open');
@@ -39,32 +34,22 @@ function filterOptions(){
     // function to hide filters and display burger menu again
       function hide(){
         // if filterArea display currentl set to block
-        if(filterArea.style.display === "block"){
+        // if(filterArea.style.display === "block"){
           // hide filter area, decrease bar height, change image and show title
-          filterArea.style.display = "none";
+          // filterArea.style.display = "none";
           burgerMenu.src = "img/menu.png";
           // filterBar.style.height = '50px';
-          burgerTitle.style.display = "block";
+          // burgerTitle.style.display = "block";
           filterBar.classList.toggle('open');
           // filterBar.classList.add('closed');
           // removeEventListener for hide function
           burgerMenu.removeEventListener("click", hide);
           // re-add the eventListener to show filters
           burgerMenu.addEventListener("click", toggleFilters);
-        }
+        // }
       }
     }
-  }
-  // screens above 600px wide
-  if(screen.width > '600'){
-    // removes burger menu display and shows filter area alone
-    burgerMenu.style.display = "none";
-    filterArea.style.display = "flex";
-    filterBar.height = '50px';
-    // remove title for burger menu
-    burgerTitle.style.display = "block";
-  }
-}
+
 
 var body = document.body;
 var scrollUp = document.getElementById("scrollUp");

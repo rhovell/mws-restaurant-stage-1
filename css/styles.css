@@ -114,12 +114,12 @@ nav h1 a {
 }
 /* ====================== Restaurant Filtering ====================== */
 /* ====================== All screens ====================== */
-.filterForm {
+.filter-form {
 	display: inline;
 	width: 100%;
 	margin-left: 10px;
 }
-.filterForm label {
+.filter-form label {
 	color: #000000;
 	font-weight: 400;
 	text-align: right;
