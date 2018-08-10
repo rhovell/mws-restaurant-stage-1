@@ -14,12 +14,12 @@ let cacheFiles = [
 // listen for installation of cache
 self.addEventListener('install', event => {
   event.waitUntil(
-      caches.open(staticCacheName).then(cache => {
-          return cache.addAll(cacheFiles);
-      })
-      .catch(error => {
-          console.log('Error caching files ' + error);
-      })
+  caches.open(staticCacheName).then(cache => {
+    return cache.addAll(cacheFiles);
+  })
+  .catch(error => {
+    console.log('Error caching files ' + error);
+  })
   // end of wait until
   );
 // end of eventListener
@@ -31,15 +31,15 @@ self.addEventListener('activate', event => {
     caches.keys()
     .then(function(cacheNames) {
     // find cache object that starts with restaurant
-      return Promise.all(
-        cacheNames.filter(function(cacheName) {
-          return cacheName.startsWith('restaurant') && cacheName != staticCacheName;
-          }).map(function(cacheName) {
-          // clear out any other caches
-            return caches.delete(cacheName);
-            })
-      // end of promise
-      );
+    return Promise.all(
+    cacheNames.filter(function(cacheName) {
+    return cacheName.startsWith('restaurant') && cacheName != staticCacheName;
+    }).map(function(cacheName) {
+    // clear out any other caches
+    return caches.delete(cacheName);
+    })
+    // end of promise
+    );
     // end of then
     })
     // end of wait until
@@ -70,19 +70,19 @@ self.addEventListener('fetch', event => {
         var copy = response.clone();
         // open cache
         return caches.open(staticCacheName)
-        .then(function(cache) {
-        // add copy to cache
-          cache.put(event.request, copy);
-          // Return response
-          return response;
-        })
-        .catch(function(error) {
-          console.log('Error adding new cache');
-        })
-        // end of then after copy
-        })
-        // end of then after cache match found
-        })
+      .then(function(cache) {
+      // add copy to cache
+        cache.put(event.request, copy);
+        // Return response
+        return response;
+      })
+      .catch(function(error) {
+        console.log('Error adding new cache');
+      })
+      // end of then after copy
+      })
+      // end of then after cache match found
+      })
     // end of respond with
     )
 // end of eventListener

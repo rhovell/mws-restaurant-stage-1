@@ -34,13 +34,13 @@
   #restaurant-list li:nth-child(even) {
     grid-column-start: 2;
   }
+  /* ====================== styling for restaurant page ====================== */
   .inside #map-container {
     height: 400px;
   }
   .inside #map {
     height: 400px;
   }
-
   .inside #footer {
     top: 525px;
   }

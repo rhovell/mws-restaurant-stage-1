@@ -88,8 +88,6 @@ initMap = () => {
   updateRestaurants();
 }
 
-
-
 /**
  * Update page and map for current restaurants.
  */
@@ -198,13 +196,13 @@ addMarkersToMap = (restaurants = self.restaurants) => {
 // Register service worker
 if('serviceWorker' in navigator) {
   navigator.serviceWorker
-           .register('index.js', {
-              scope: ''
-           })
-           .then(function(reg) {
-              console.log("Service Worker Registered");
-            })
-           .catch(function(error) {
-            console.log("Service Worker Registration Failed with " + error);
-           });
+  .register('index.js', {
+    scope: ''
+  })
+  .then(function(reg) {
+    console.log("Service Worker Registered");
+  })
+  .catch(function(error) {
+    console.log("Service Worker Registration Failed with " + error);
+  });
 }

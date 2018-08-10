@@ -113,7 +113,6 @@ nav h1 a {
   background-color: #ccc;
 }
 /* ====================== Restaurant Filtering ====================== */
-/* ====================== All screens ====================== */
 .filter-form {
 	display: inline;
 	width: 100%;
@@ -143,7 +142,6 @@ nav h1 a {
 	grid-row-end: 2;
 	height: 200px;
 }
-/* ====================== Mobile Phones  ====================== */
 #burgerHeader {
 	grid-row-start: 1;
 	margin: auto 50px auto 5px;
@@ -163,7 +161,6 @@ nav h1 a {
 	vertical-align: middle;
 	grid-row-start: 1;
 }
-/* ====================== Tablets and above  ====================== */
 #filterArea {
 	display: none;
 	grid-row-start: 2;
@@ -190,7 +187,6 @@ nav h1 a {
   padding: 0 10px;
   width: 200px;
 }
-
 /* ====================== Restaurant Listing ====================== */
 .results-data {
 	display: inline-flex;
@@ -259,7 +255,7 @@ nav h1 a {
 	transform: translateY(4px);
 	border-bottom: 3px solid #ffffff;
 }
-/* ====================== Restaurant Details ====================== */
+/* ====================== Restaurant Details Pages ====================== */
 .inside header {
   position: fixed;
   top: 0;
@@ -321,10 +317,6 @@ nav h1 a {
 	position: relative;
 	top: 725px;
 	background-color: #fff;
-
-}
-#reviews-container {
-  /* padding: 30px 40px 80px; */
 }
 #reviews-container h2 {
   color: #001658;
@@ -339,7 +331,7 @@ nav h1 a {
 }
 #reviews-list li {
   background-color: #fff;
-    border: 2px solid #f3f3f3;
+  border: 2px solid #f3f3f3;
   display: block;
   list-style-type: none;
   margin: 0 0 30px;
@@ -354,6 +346,7 @@ nav h1 a {
 #restaurant-hours td {
   color: #666;
 }
+/* ====================== Scroll to top button ====================== */
 .scroll-top {
 	width: 80%;
 	background-color: #3397DB;
@@ -370,5 +363,4 @@ nav h1 a {
 	transform: translateY(4px);
 	font-weight: bold;
 	border-bottom: 3px solid #ffffff;
-
 }
