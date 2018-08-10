@@ -202,9 +202,9 @@ if('serviceWorker' in navigator) {
               scope: ''
            })
            .then(function(reg) {
-              console.log("Registered");
+              console.log("Service Worker Registered");
             })
            .catch(function(error) {
-            console.log("Registration Failed with " + error);
+            console.log("Service Worker Registration Failed with " + error);
            });
 }
