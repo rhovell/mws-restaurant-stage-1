@@ -158,6 +158,7 @@ fillBreadcrumb = (restaurant=self.restaurant) => {
   const breadcrumb = document.getElementById('breadcrumb');
   const li = document.createElement('li');
   li.innerHTML = restaurant.name;
+  li.setAttribute("aria-current", "page");
   breadcrumb.appendChild(li);
 }
 
@@ -175,4 +176,18 @@ getParameterByName = (name, url) => {
   if (!results[2])
     return '';
   return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+
+// TODO: register service worker
+registerServiceWorker = (reg, error) => {
+  navigator.serviceWorker
+  .register('index.js', {
+    scope: ''
+  })
+  .then(function(reg) {
+    console.log("Service Worker Registered");
+  })
+  .catch(function(error) {
+    console.log("Service Worker Registration Failed with " + error);
+  });
 }
